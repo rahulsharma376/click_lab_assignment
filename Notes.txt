@@ -1,0 +1,8 @@
+#16 Handle asynchronous function (promises)
+    can be handled using promises or callback.
+	In synchronous operations tasks are performed one at a time.
+	In Asynchronous, Second task do not wait to finish first task.
+
+
+#17 How Node js works?
+	
