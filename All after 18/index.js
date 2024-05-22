@@ -6,33 +6,37 @@ const publicPath = path.join(__dirname,'public');
 
 app.set('view engine','ejs');
 
-app.get('/profile', (_,res) => {
+app.get('/profile', (_,resp) => {
     const user = {
         name: 'Rahul',
         email: 'rahul.376@developer.com',
-        city: 'Banur, Punjab'
+        city: 'Banur, Punjab',
+        skills: ['php','js','c++','java','node']
     }
-    res.render(`profile`, {user});
+    resp.render(`profile`, {user});
 })
 
+app.get('/login', (_,resp) => {
+    resp.render('login');
+})
 // app.use(express.static(publicPath));
-app.get('/', (_,res) => {
-    res.sendFile(`${publicPath}/index.html`)
+app.get('/', (_,resp) => {
+    resp.sendFile(`${publicPath}/index.html`)
 });
 
-app.get('/about', (_,res) => {
-    res.sendFile(`${publicPath}/about.html`)
+app.get('/about', (_,resp) => {
+    resp.sendFile(`${publicPath}/about.html`)
 });
 
-app.get('/help', (_,res) => {
-    res.sendFile(`${publicPath}/help.html`)
+app.get('/help', (_,resp) => {
+    resp.sendFile(`${publicPath}/help.html`)
 });
 
-app.get('/help', (_,res) => {
-    res.sendFile(`${publicPath}/help.html`)
+app.get('/help', (_,resp) => {
+    resp.sendFile(`${publicPath}/help.html`)
 });
 
-app.get('/*', (_,res) => {
-    res.sendFile(`${publicPath}/index.html`)
+app.get('/*', (_,resp) => {
+    resp.sendFile(`${publicPath}/index.html`)
 });
 app.listen(5000);
